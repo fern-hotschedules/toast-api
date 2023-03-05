@@ -105,9 +105,9 @@ types:
         docs: >
           Where this premodifier should be displayed relative to the modifier name.
           PREFIX - before the modifier name SUFFIX - after the modifier name
-        type: optional<InlinedType11>
+        type: optional<PreModifierPlacement>
       parent: optional<commons.ToastReference>
-  InlinedType11:
+  PreModifierPlacement:
     docs: |
       Where this premodifier should be displayed relative to the modifier name.
       PREFIX - before the modifier name

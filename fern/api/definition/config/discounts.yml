@@ -114,7 +114,7 @@ types:
           * `FIXED_TOTAL` - a combo discount that reduces the
           price of all eligible items to a preconfigured currency
           amount.
-        type: optional<InlinedType1>
+        type: optional<DiscountType>
       percentage:
         docs: |
           Percent discount applied when the `amountType` is
@@ -133,7 +133,7 @@ types:
           * `BOGO` - a buy one get one (BOGO) discount.
           * `ITEM` - the discount can be applied to an item
           selection in a check.
-        type: optional<InlinedType2>
+        type: optional<DiscountSelection>
       nonExclusive:
         docs: |
           Indicates whether you can apply the discount with other
@@ -158,14 +158,14 @@ types:
           to the least expensive matching item selection in the check.
           * `MOST_EXPENSIVE` - the BOGO discount applies to the most
           expensive matching item selection in the check.
-        type: optional<InlinedType3>
+        type: optional<MenuSelection>
       fixedTotal:
         docs: |
           The total price of items discounted by a combo
           discount. This value is `null` for discounts that are
           not combo discounts.
         type: optional<double>
-  InlinedType1:
+  DiscountType:
     docs: |
       * `PERCENT` - the discount reduces the price by a
       preconfigured percent.
@@ -186,7 +186,7 @@ types:
       - OPEN_FIXED
       - BOGO
       - FIXED_TOTAL
-  InlinedType2:
+  DiscountSelection:
     docs: |
       * `CHECK` - the discount can be applied to a check.
       * `BOGO` - a buy one get one (BOGO) discount.
@@ -196,7 +196,7 @@ types:
       - CHECK
       - ITEM
       - BOGO
-  InlinedType3:
+  MenuSelection:
     docs: |
       Indicates which menu item selections are discounted
       when you apply a BOGO discount. An item that is

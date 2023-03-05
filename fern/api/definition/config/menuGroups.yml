@@ -120,7 +120,7 @@ types:
           entity should be visible. See <a
           href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
           entity visibility enhancements (rolled out)</a> for more information.
-        type: optional<InlinedType4>
+        type: optional<MenuDisplay>
       parent: optional<commons.ExternalReference>
       items:
         docs: |
@@ -157,14 +157,14 @@ types:
         docs: >
           The unit of measure used to determine the price of items in this group.
           This value is not relevant if `inheritUnitOfMeasure` is true.
-        type: optional<InlinedType5>
+        type: optional<PriceUnit>
       inheritUnitOfMeasure:
         docs: |
           True if this `MenuGroup` inherits its unit of measure
           from its parent `MenuGroup` or (if its parent is null)
           its parent `Menu`.
         type: optional<boolean>
-  InlinedType4:
+  MenuDisplay:
     docs: >
       Deprecated. Indicates where the menu is displayed and who can see it. *
       ALL: Visible to everyone (servers and customers) * POS_ONLY: Only visible
@@ -183,7 +183,7 @@ types:
       - ALL
       - POS_ONLY
       - NONE
-  InlinedType5:
+  PriceUnit:
     docs: |
       The unit of measure used to determine the price of items in this group.
       This value is not relevant if `inheritUnitOfMeasure` is true.

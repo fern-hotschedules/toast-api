@@ -99,14 +99,14 @@ types:
           The behavior of the dining option. `TAKE_OUT` and
           `DELIVERY` require a `customer` to be specified on the
           order, and `DELIVERY` requires a `deliveryInfo` value.
-        type: optional<InlinedType0>
+        type: optional<DiningOptionBehavior>
       curbside:
         docs: >
           Indicates whether the dining option has curbside behavior, and allows the
           guest to provide identifying information such as a description of
           their vehicle.
         type: optional<boolean>
-  InlinedType0:
+  DiningOptionBehavior:
     docs: |
       The behavior of the dining option. `TAKE_OUT` and
       `DELIVERY` require a `customer` to be specified on the

@@ -50,7 +50,8 @@ service:
               of the message body data. The value must be 
               `application/json`.
             type: string
-        body: InlinedType0
+        body: 
+          type: string
         name: employee-request
       response: Employee
     employeesEmployeeIdGet:
@@ -140,7 +141,8 @@ service:
               of the message body data. The value must be 
               `application/json`.
             type: string
-        body: InlinedType1
+        body: 
+          type: string
         name: employee-information-request
       response: Employee
     employeesEmployeeIdExternalIdPut:
@@ -174,7 +176,8 @@ service:
               of the message body data. The value must be 
               `application/json`.
             type: string
-        body: InlinedType2
+        body: 
+          type: string
         name: replace-an-external-identifier-request
       response: Employee
     employeesEmployeeIdExternalIdPost:
@@ -207,7 +210,8 @@ service:
               of the message body data. The value must be 
               `application/json`.
             type: string
-        body: InlinedType3
+        body: 
+          type: string
         name: external-identifier-request
       response: Employee
     employeesEmployeeIdJobsPut:
@@ -238,7 +242,8 @@ service:
               of the message body data. The value must be 
               `application/json`.
             type: string
-        body: InlinedType4
+        body: 
+          type: string
         name: a-jobs-list-request
       response: Employee
     employeesEmployeeIdWageOverridesPut:
@@ -272,7 +277,8 @@ service:
               of the message body data. The value must be 
               `application/json`.
             type: string
-        body: InlinedType5
+        body: 
+          type: string
         name: wage-overrides-request
       response: Employee
 types:
@@ -370,9 +376,3 @@ types:
           Required currency value of the employee's overriding job wage.
         type: double
       jobReference: commons.ExternalReference
-  InlinedType0: string
-  InlinedType1: string
-  InlinedType2: string
-  InlinedType3: string
-  InlinedType4: string
-  InlinedType5: string

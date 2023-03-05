@@ -100,7 +100,7 @@ types:
         type: optional<string>
       amountType:
         docs: The type of service charge.
-        type: optional<InlinedType12>
+        type: optional<ServiceChargeType>
       amount:
         docs: Amount in USD to be applied for `FIXED` type service charges.
         type: optional<double>
@@ -125,14 +125,14 @@ types:
       serviceChargeCalculation:
         docs: Defines whether or not the service charge is applied before (PRE) or after
           (POST) discounts. This field is null for non-percent service charges.
-        type: optional<InlinedType13>
-  InlinedType12:
+        type: optional<ServiceChargeCalculation>
+  ServiceChargeType:
     docs: The type of service charge.
     enum:
       - FIXED
       - PERCENT
       - OPEN
-  InlinedType13:
+  ServiceChargeCalculation:
     docs: Defines whether or not the service charge is applied before (PRE) or after
       (POST) discounts. This field is null for non-percent service charges.
     enum:

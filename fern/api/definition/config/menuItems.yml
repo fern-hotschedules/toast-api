@@ -131,7 +131,7 @@ types:
           entity should be visible. See <a
           href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
           entity visibility enhancements (rolled out)</a> for more information.
-        type: optional<InlinedType6>
+        type: optional<MenuDisplay>
       type:
         docs: >
           Specifies whether this item is a special request or other off-menu
@@ -140,7 +140,7 @@ types:
           is not an item. * `PORTION` - a division of a menu item used to apply
           modifiers separately to separate parts of an item. For example, one
           half of a pizza.
-        type: optional<InlinedType7>
+        type: optional<SpecialRequestSelection>
       optionGroups:
         docs: |
           An array of `ExternalReference` objects containing the
@@ -163,13 +163,13 @@ types:
           The unit of measure used to determine the price of the item.
           The default is NONE.
           This value is not relevant if `inheritUnitOfMeasure` is true.
-        type: optional<InlinedType8>
+        type: optional<PriceUnit>
       inheritUnitOfMeasure:
         docs: |
           True if this menu item inherits its unit of measure
           from its parent `MenuGroup`.
         type: optional<boolean>
-  InlinedType6:
+  MenuDisplay:
     docs: >
       Deprecated. Indicates where the menu is displayed and who can see it. *
       ALL: Visible to everyone (servers and customers) * POS_ONLY: Only visible
@@ -188,7 +188,7 @@ types:
       - ALL
       - POS_ONLY
       - NONE
-  InlinedType7:
+  SpecialRequestSelection:
     docs: >
       Specifies whether this item is a special request or other off-menu
       transaction. * `NONE` - a normal menu item or modifier. * `OPENITEM` - an
@@ -200,7 +200,7 @@ types:
       - OPENITEM
       - SPECIAL_REQUEST
       - PORTION
-  InlinedType8:
+  PriceUnit:
     docs: |
       The unit of measure used to determine the price of the item.
       The default is NONE.

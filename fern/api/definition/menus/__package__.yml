@@ -232,7 +232,7 @@ types:
             href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
             Visibility Enhancements (Rolled Out)</a> for more information.
           The `visibility` array is empty if the menu entity is not configured to be visible for any of the use cases listed above.
-        type: optional<list<InlinedType0>>
+        type: optional<list<MenuEntityVisibility>>
       availability:
         docs: >
           An `Availability` object with information about the days and times this
@@ -247,19 +247,19 @@ types:
           submit an order for an item on a menu when it is not currently
           available. For this reason, it is particularly important that you
           check a menu’s `availability` value before placing an order from it.
-        type: optional<InlinedType1>
+        type: optional<Availability>
       menuGroups:
         docs: |
           An array of the `MenuGroup` objects contained in this menu.
         type: optional<list<MenuGroup>>
-  InlinedType0:
+  MenuEntityVisibility:
     enum:
       - POS
       - KIOSK
       - GRUBHUB
       - TOAST_ONLINE_ORDERING
       - ORDERING_PARTNERS
-  InlinedType1:
+  Availability:
     docs: >
       An `Availability` object with information about the days and times this
       menu is available. If the menu is available 24 hours per day, 7 days per
@@ -357,7 +357,7 @@ types:
             href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
             Visibility Enhancements (Rolled Out)</a> for more information.
           The `visibility` array is empty if the menu entity is not configured to be visible for any of the use cases listed above.
-        type: optional<list<InlinedType2>>
+        type: optional<list<MenuEntityVisibility>>
       itemTags:
         docs: >
           An array of `ItemTag` objects that are assigned to this menu group. Item
@@ -373,13 +373,6 @@ types:
         docs: |
           An array of the `MenuItem` objects contained in this menu group.
         type: optional<list<MenuItem>>
-  InlinedType2:
-    enum:
-      - POS
-      - KIOSK
-      - GRUBHUB
-      - TOAST_ONLINE_ORDERING
-      - ORDERING_PARTNERS
   ItemTag:
     docs: >
       A descriptive term that identifies a characteristic of a menu item or menu
@@ -477,7 +470,7 @@ types:
             href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
             Visibility Enhancements (Rolled Out)</a> for more information.
           The `visibility` array is empty if the menu entity is not configured to be visible for any of the use cases listed above.
-        type: optional<list<InlinedType3>>
+        type: optional<list<MenuEntityVisibility>>
       price:
         docs: >
           The price of this menu item. In the Toast administration back-end, menu
@@ -511,7 +504,7 @@ types:
             * Size Price pricing strategy, then the `pricingStrategy` value is SIZE_PRICE.
             * Open Price pricing strategy, then the `pricingStrategy` value is OPEN_PRICE.
           If the menu item is priced using the Location Specific Price pricing strategy, then the `pricingStrategy` value indicates which pricing strategy is used at the current location. For example, consider a menu item that uses a menu-specific price at the Boston location and a base price at the New York location. When you retrieve the menu data for the Boston location, the `pricingStrategy` for the menu item is MENU_SPECIFIC_PRICE. When you retrieve menu data for the New York location, the `pricingStrategy` for the menu item is BASE_PRICE. If the menu item is priced using a price level, then the `pricingStrategy` value indicates which pricing strategy is used for that price level. For example, if the "Draft Beer" pricing level uses a time-specific price, then the `pricingStrategy` value for a menu item that is assigned the "Draft Beer" pricing level is TIME_SPECIFIC_PRICE. If the `pricingStrategy` value is BASE_PRICE or MENU_SPECIFIC_PRICE, you can retrieve the menu item's price from its `price` value. If the `pricingStrategy` value is TIME_SPECIFIC_PRICE or SIZE_PRICE, you must use the rules provided in _this menu item's_ `pricingRules` value to calculate the price for it.
-        type: optional<InlinedType4>
+        type: optional<PricingStrategy>
       pricingRules:
         docs: >
           A `PricingRules` object with information about how to calculate the price
@@ -597,7 +590,7 @@ types:
           that menu item. For more information, see <a
           href="https://doc.toasttab.com/doc/platformguide/adminTaxesOnModifiers.html#adminModifierTaxInteraction">Tax
           functionality interaction</a> in the Toast Platform Guide.
-        type: optional<InlinedType5>
+        type: optional<TaxInclusionSetting>
       itemTags:
         docs: >
           An array of `ItemTag` objects that are assigned to this menu item. Item
@@ -627,7 +620,7 @@ types:
         docs: >
           The unit of measure used to determine the price of the item. For example,
           $10.00 per gram.
-        type: optional<InlinedType6>
+        type: optional<PriceUnit>
       portions:
         docs: >
           An array of `Portion` objects that define the portions that can be used
@@ -658,14 +651,7 @@ types:
           An array of `referenceId`s for `ModifierGroup` objects. These objects
           define the modifier groups that apply to this menu item.
         type: optional<list<integer>>
-  InlinedType3:
-    enum:
-      - POS
-      - KIOSK
-      - GRUBHUB
-      - TOAST_ONLINE_ORDERING
-      - ORDERING_PARTNERS
-  InlinedType4:
+  PricingStrategy:
     docs: >
       A string that represents the pricing strategy used for this menu item. You
       use the `pricingStrategy` value, in conjunction with the `pricingRules`
@@ -687,7 +673,7 @@ types:
       - TIME_SPECIFIC_PRICE
       - SIZE_PRICE
       - OPEN_PRICE
-  InlinedType5:
+  TaxInclusionSetting:
     docs: >
       A string that represents the tax inclusion setting for this menu item.
       Possible values include: * `TAXINCLUDED`: The menu item's price includes
@@ -720,7 +706,7 @@ types:
       - TAXINCLUDED
       - TAX_NOTINCLUDED
       - SMART_TAX
-  InlinedType6:
+  PriceUnit:
     docs: >
       The unit of measure used to determine the price of the item. For example,
       $10.00 per gram.
@@ -1068,7 +1054,7 @@ types:
           An array of days of the week that are associated with identical time
           ranges. The time ranges are defined in a corresponding `timeRanges`
           value. Names of the days are in upper case, for example, MONDAY.
-        type: optional<list<InlinedType7>>
+        type: optional<list<DaysOfWeek>>
       timeRanges:
         docs: >
           An array of `TimeRange` objects that define the time ranges that a menu or
@@ -1081,7 +1067,7 @@ types:
           example, a time range that starts at "07:00" and ends at "03:00" runs
           from 7am until 3am the next day.
         type: optional<list<TimeRange>>
-  InlinedType7:
+  DaysOfWeek:
     docs: A day of the week, for example, SUNDAY or THURSDAY.
     enum:
       - SUNDAY
@@ -1428,7 +1414,7 @@ types:
             href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
             Visibility Enhancements (Rolled Out)</a> for more information.
           The `visibility` array is empty if the menu entity is not configured to be visible for any of the use cases listed above.
-        type: optional<list<InlinedType8>>
+        type: optional<list<MenuEntityVisibility>>
       pricingStrategy:
         docs: >
           A string that represents the pricing strategy used for this modifier
@@ -1534,7 +1520,7 @@ types:
             * REQUIRED: Forces a server to make a selection from the modifier group before continuing to the next screen in the Toast POS app. Note that the orders API rejects an order if a modifier option is not included for a modifier group whose `requiredMode` value is set to REQUIRED.
             * OPTIONAL FORCE SHOW: Prompts the server to view the modifier group but does not force them to choose a modifier option from it before continuing to the next screen in the Toast POS app. This setting is typically used for upselling.
             * OPTIONAL: The modifier group does not appear when an associated menu item is selected but the server can access it on the Toast POS app if necessary.
-        type: optional<InlinedType9>
+        type: optional<ModifierGroupBehavior>
       isMultiSelect:
         docs: >
           Indicates whether you can select more than one modifier option from this
@@ -1569,14 +1555,7 @@ types:
           An array of `referenceId`s for `ModifierOption` objects. These objects
           define the modifier options contained in this modifier group.
         type: optional<list<integer>>
-  InlinedType8:
-    enum:
-      - POS
-      - KIOSK
-      - GRUBHUB
-      - TOAST_ONLINE_ORDERING
-      - ORDERING_PARTNERS
-  InlinedType9:
+  ModifierGroupBehavior:
     docs: >
       Specifies how the modifier group appears and behaves in the Toast POS app.
       Values include:
@@ -1678,7 +1657,7 @@ types:
             href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
             Visibility Enhancements (Rolled Out)</a> for more information.
           The `visibility` array is empty if the menu entity is not configured to be visible for any of the use cases listed above.
-        type: optional<list<InlinedType10>>
+        type: optional<list<MenuEntityVisibility>>
       price:
         docs: >
           The price of this modifier option. In the Toast administration back-end, a
@@ -1777,7 +1756,7 @@ types:
       unitOfMeasure:
         docs: The unit of measure used to determine the price of the modifier option.
           For example, $10.00 per gram.
-        type: optional<InlinedType11>
+        type: optional<PriceUnit>
       isDefault:
         docs: >
           Indicates whether this modifier option is included on the menu item by
@@ -1818,22 +1797,6 @@ types:
           and Blue Cheese modifier options. Salad Dressing is a nested modifier
           group and the individual salad dressings are nested modifier options.
         type: optional<list<integer>>
-  InlinedType10:
-    enum:
-      - POS
-      - KIOSK
-      - GRUBHUB
-      - TOAST_ONLINE_ORDERING
-      - ORDERING_PARTNERS
-  InlinedType11:
-    docs: The unit of measure used to determine the price of the modifier option.
-      For example, $10.00 per gram.
-    enum:
-      - NONE
-      - LB
-      - OZ
-      - KG
-      - G
   ModifierOptionTaxInfo:
     docs: >
       Information about the tax rates and tax behavior of this modifier option.
@@ -1960,8 +1923,8 @@ types:
           receipts:
             * PREFIX: The pre-modifier name is placed before the modifier option name, for example, "EXTRA Cheese".
             * SUFFIX: The pre-modifier name is placed after the modifier option name, for example, "Cheese EXTRA".
-        type: optional<InlinedType12>
-  InlinedType12:
+        type: optional<PreModifierDisplay>
+  PreModifierDisplay:
     docs: >
       A string that indicates how the pre-modifier is displayed on tickets and
       receipts:

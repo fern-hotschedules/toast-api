@@ -57,7 +57,7 @@ types:
         type: optional<double>
       type:
         docs: The type of the tax rate.
-        type: optional<InlinedType14>
+        type: optional<TaxRateType>
       roundingType:
         docs: >
           The method used to round fractional currency amounts to non-fractional
@@ -76,7 +76,7 @@ types:
           For more details and examples, see <a
           href="https://doc.toasttab.com/doc/platformguide/adminPercentTaxRates.html#roundingOptions">Rounding
           options</a>.
-        type: optional<InlinedType15>
+        type: optional<RoundCurrencyMethod>
       taxTable:
         docs: >-
           An array of `TaxTableRow` objects that define a set of tax amounts
@@ -92,7 +92,7 @@ types:
           a specific dining option, such as takeout.
         type: optional<list<ConditionalTaxRate>>
 
-  InlinedType14:
+  TaxRateType:
     docs: The type of the tax rate.
     enum:
       - PERCENT
@@ -101,7 +101,7 @@ types:
       - NONE
       - EXTERNAL
 
-  InlinedType15:
+  RoundCurrencyMethod:
     docs: >
       The method used to round fractional currency amounts to non-fractional
       currency amounts.
