@@ -1,6 +1,24 @@
 name: api
-auth: bearer
-environments:
-  Production: https://api.example.com
-  Sandbox: https://sandbox.example.com
-default-environment: Production
+display-name: Configuration API
+# headers:
+  # Toast-Restaurant-External-ID:
+  #   docs: |
+  #     The Toast POS GUID of the restaurant that the alternate payment
+  #     type is configured for.
+  #   type: string
+
+  # labor
+  # Toast-Restaurant-External-ID:
+  #   docs: |
+  #     The Toast platform GUID of the restaurant that is the 
+  #     context for this operation.
+  #   type: string
+
+  # menu
+#     Toast-Restaurant-External-ID:
+#     docs: The identifier for the restaurant.
+#     type: string
+# environments:
+#   Production: https://ws-api.toasttab.com/menus/v2
+#   Sandbox: https://ws-sandbox-api.eng.toasttab.com/menus/v2
+# default-environment: null
