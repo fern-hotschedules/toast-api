@@ -131,7 +131,7 @@ types:
           entity should be visible. See <a
           href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
           entity visibility enhancements (rolled out)</a> for more information.
-        type: optional<MenuDisplay>
+        type: optional<commons.MenuDisplay>
       type:
         docs: >
           Specifies whether this item is a special request or other off-menu
@@ -163,31 +163,12 @@ types:
           The unit of measure used to determine the price of the item.
           The default is NONE.
           This value is not relevant if `inheritUnitOfMeasure` is true.
-        type: optional<PriceUnit>
+        type: optional<commons.PriceUnit>
       inheritUnitOfMeasure:
         docs: |
           True if this menu item inherits its unit of measure
           from its parent `MenuGroup`.
         type: optional<boolean>
-  MenuDisplay:
-    docs: >
-      Deprecated. Indicates where the menu is displayed and who can see it. *
-      ALL: Visible to everyone (servers and customers) * POS_ONLY: Only visible
-      to servers * NONE: Hidden from everyone Toast is streamlining and
-      improving the set of configuration options that restaurants use for
-      configuring where a menu entity is visible (for example, on a Toast POS
-      device or on a restaurant's Toast online ordering website). As part of
-      this change, the `visibility` value in the configuration API has been
-      deprecated. Before 2020-05-25, you should transition to using the
-      `visibility` array that the menus API returns for each menu entity,
-      instead of this `visibility` value, to determine where the entity should
-      be visible. See <a
-      href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
-      entity visibility enhancements (rolled out)</a> for more information.
-    enum:
-      - ALL
-      - POS_ONLY
-      - NONE
   SpecialRequestSelection:
     docs: >
       Specifies whether this item is a special request or other off-menu
@@ -200,14 +181,3 @@ types:
       - OPENITEM
       - SPECIAL_REQUEST
       - PORTION
-  PriceUnit:
-    docs: |
-      The unit of measure used to determine the price of the item.
-      The default is NONE.
-      This value is not relevant if `inheritUnitOfMeasure` is true.
-    enum:
-      - NONE
-      - LB
-      - OZ
-      - KG
-      - G

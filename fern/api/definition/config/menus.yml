@@ -123,7 +123,7 @@ types:
           entity should be visible. See <a
           href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
           entity visibility enhancements (rolled out)</a> for more information.
-        type: optional<MenuDisplay>
+        type: optional<commons.MenuDisplay>
       groups:
         docs: |
           An array of the `MenuGroup` objects
@@ -136,33 +136,5 @@ types:
         docs: >
           The unit of measure used to determine the price of items in this menu. For
           example, $10.00 per gram.
-        type: optional<PriceUnit>
-  MenuDisplay:
-    docs: >
-      Deprecated. Indicates where the menu is displayed and who can see it. *
-      ALL: Visible to everyone (servers and customers) * POS_ONLY: Only visible
-      to servers * NONE: Hidden from everyone Toast is streamlining and
-      improving the set of configuration options that restaurants use for
-      configuring where a menu entity is visible (for example, on a Toast POS
-      device or on a restaurant's Toast online ordering website). As part of
-      this change, the `visibility` value in the configuration API has been
-      deprecated. Before 2020-05-25, you should transition to using the
-      `visibility` array that the menus API returns for each menu entity,
-      instead of this `visibility` value, to determine where the entity should
-      be visible. See <a
-      href="https://doc.toasttab.com/doc/devguide/apiDeprecatedApiFunctions.html#apiMenuEntityVisibilityEnhancements">Menu
-      entity visibility enhancements (rolled out)</a> for more information.
-    enum:
-      - ALL
-      - POS_ONLY
-      - NONE
-  PriceUnit:
-    docs: >
-      The unit of measure used to determine the price of items in this menu. For
-      example, $10.00 per gram.
-    enum:
-      - NONE
-      - LB
-      - OZ
-      - KG
-      - G
+        type: optional<commons.PriceUnit>
+  
