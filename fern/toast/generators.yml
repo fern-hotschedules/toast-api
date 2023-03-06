@@ -9,4 +9,3 @@ groups:
           token: ${FERN_NPM_TOKEN}
         github:
           repository: fern-hotschedules/toast-node
-
