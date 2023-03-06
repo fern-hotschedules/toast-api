@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /priceGroups
   endpoints:
-    priceGroupsGuidGet:
+    getPriceGroup:
       path: /{guid}
       method: GET
       docs: |
@@ -28,7 +28,7 @@ service:
           price-level-for-menu-items
           -request
       response: PriceGroup
-    priceGroupsGet:
+    getAllPriceGroups:
       path: ""
       method: GET
       docs: |

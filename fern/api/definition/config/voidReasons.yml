@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /voidReasons
   endpoints:
-    voidReasonsGuidGet:
+    getVoidReason:
       path: /{guid}
       method: GET
       docs: |
@@ -28,7 +28,7 @@ service:
           void-sale-reason
           -request
       response: VoidReason
-    voidReasonsGet:
+    getAllVoidReasons:
       path: ""
       method: GET
       docs: |

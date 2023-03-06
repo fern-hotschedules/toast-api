@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /preModifiers
   endpoints:
-    preModifiersGuidGet:
+    getPreModifier:
       path: /{guid}
       method: GET
       docs: |
@@ -27,7 +27,7 @@ service:
           pre-modifier
           -request
       response: PreModifier
-    preModifiersGet:
+    getAllPremodifers:
       path: ""
       method: GET
       docs: |

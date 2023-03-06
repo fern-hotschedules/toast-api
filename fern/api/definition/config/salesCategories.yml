@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /salesCategories
   endpoints:
-    salesCategoriesGuidGet:
+    getSalesCategory:
       path: /{guid}
       method: GET
       docs: |
@@ -29,7 +29,7 @@ service:
           menu-item-sales-category
           -request
       response: SalesCategory
-    salesCategoriesGet:
+    getAllSalesCategories:
       path: ""
       method: GET
       docs: |

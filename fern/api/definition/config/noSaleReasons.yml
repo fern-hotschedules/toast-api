@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /noSaleReasons
   endpoints:
-    noSaleReasonsGuidGet:
+    getNoSaleReason:
       path: /{guid}
       method: GET
       docs: |
@@ -27,7 +27,7 @@ service:
           a-no-sale-reason
           -request
       response: NoSaleReason
-    noSaleReasonsGet:
+    getAllNoSaleReasons:
       path: ""
       method: GET
       docs: |

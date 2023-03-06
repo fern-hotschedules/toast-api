@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /authentication/login
   endpoints:
-    authenticationLoginPost:
+    getAuthToken:
       path: ""
       method: POST
       docs: |

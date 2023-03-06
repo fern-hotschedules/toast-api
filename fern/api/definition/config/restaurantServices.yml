@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /restaurantServices
   endpoints:
-    restaurantServicesGuidGet:
+    getRestaurantService:
       path: /{guid}
       method: GET
       docs: |
@@ -30,7 +30,7 @@ service:
           restaurant-service-period
           -request
       response: RestaurantService
-    restaurantServicesGet:
+    getAllRestaurantServices:
       path: ""
       method: GET
       docs: >

@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /shifts
   endpoints:
-    shiftsGet:
+    getAllShifts:
       path: ""
       method: GET
       docs: |
@@ -50,7 +50,7 @@ service:
             type: string
         name: shifts-request
       response: list<Shift>
-    shiftsPost:
+    createShift:
       path: ""
       method: POST
       docs: |
@@ -73,7 +73,7 @@ service:
           type: string
         name: create-shift-request
       response: Shift
-    shiftsShiftIdGet:
+    getShift:
       path: /{shiftId}
       method: GET
       docs: |
@@ -95,7 +95,7 @@ service:
             type: string
         name: get-shift-request
       response: Shift
-    shiftsShiftIdPut:
+    updateShift:
       path: /{shiftId}
       method: PUT
       docs: |
@@ -120,7 +120,7 @@ service:
           type: string
         name: update-shift-request
       response: Shift
-    shiftsShiftIdDelete:
+    deleteShift:
       path: /{shiftId}
       method: DELETE
       docs: |

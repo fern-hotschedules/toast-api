@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /printers
   endpoints:
-    printersGuidGet:
+    getPrinter:
       path: /{guid}
       method: GET
       docs: |
@@ -28,7 +28,7 @@ service:
           printer
           -request
       response: Printer
-    printersGet:
+    getAllPrinters:
       path: ""
       method: GET
       docs: |

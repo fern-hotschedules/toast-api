@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /diningOptions
   endpoints:
-    diningOptionsGuidGet:
+    getDiningOption:
       path: /{guid}
       method: GET
       docs: |
@@ -29,7 +29,7 @@ service:
           dining-option
           -request
       response: DiningOption
-    diningOptionsGet:
+    getAllDiningOptions:
       path: ""
       method: GET
       docs: |

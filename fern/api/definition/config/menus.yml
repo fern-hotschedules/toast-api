@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /menus
   endpoints:
-    menusGuidGet:
+    getMenu:
       path: /{guid}
       method: GET
       docs: |
@@ -29,7 +29,7 @@ service:
           menu
           -request
       response: Menu
-    menusGet:
+    getAllMenus:
       path: ""
       method: GET
       docs: |

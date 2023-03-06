@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: ""
   endpoints:
-    paymentsGet:
+    getAllPayments:
       path: /payments
       method: GET
       docs: |
@@ -49,7 +49,7 @@ service:
             type: string
         name: get-payment-identifiers-request
       response: list<string>
-    paymentsGuidGet:
+    getPayment:
       path: /payments/{guid}
       method: GET
       docs: Returns a JSON `Payment` object containing detailed information about
@@ -66,7 +66,7 @@ service:
             type: string
         name: get-a-payment-request
       response: commons.Payment
-    ordersChecksPaymentsPost:
+    createPayment:
       path: /orders/{orderGuid}/checks/{checkGuid}/payments
       method: POST
       docs: >
@@ -93,7 +93,7 @@ service:
           type: list<commons.Payment>
         name: post-payments-request
       response: commons.Order
-    ordersOrderGuidChecksCheckGuidPaymentsPaymentGuidPatch:
+    updatePayment:
       path: /orders/{orderGuid}/checks/{checkGuid}/payments/{paymentGuid}
       method: PATCH
       docs: >

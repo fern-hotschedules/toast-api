@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /alternatePaymentTypes
   endpoints:
-    alternatePaymentTypesGuidGet:
+    getAlternatePaymentType:
       path: /{guid}
       method: GET
       docs: |

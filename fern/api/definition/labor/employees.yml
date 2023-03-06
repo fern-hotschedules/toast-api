@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /employees
   endpoints:
-    employeesGet:
+    getAllEmployees:
       path: ""
       method: GET
       docs: |
@@ -31,7 +31,7 @@ service:
             type: string
         name: employees-request
       response: list<Employee>
-    employeesPost:
+    createEmployee:
       path: ""
       method: POST
       docs: |
@@ -54,7 +54,7 @@ service:
           type: string
         name: employee-request
       response: Employee
-    employeesEmployeeIdGet:
+    getEmployee:
       path: /{employeeId}
       method: GET
       docs: |
@@ -76,7 +76,7 @@ service:
             type: string
         name: information-about-one-employee-request
       response: Employee
-    employeesEmployeeIdDelete:
+    deleteEmployee:
       path: /{employeeId}
       method: DELETE
       docs: |
@@ -114,7 +114,7 @@ service:
             type: string
         name: delete-employee-request
       response: Employee
-    employeesEmployeeIdPatch:
+    updateEmployee:
       path: /{employeeId}
       method: PATCH
       docs: >
@@ -145,7 +145,7 @@ service:
           type: string
         name: employee-information-request
       response: Employee
-    employeesEmployeeIdExternalIdPut:
+    updateEmployeeID:
       path: /{employeeId}/externalId
       method: PUT
       docs: |
@@ -180,7 +180,7 @@ service:
           type: string
         name: replace-an-external-identifier-request
       response: Employee
-    employeesEmployeeIdExternalIdPost:
+    createEmployeeID:
       path: /{employeeId}/externalId
       method: POST
       docs: |
@@ -214,7 +214,7 @@ service:
           type: string
         name: external-identifier-request
       response: Employee
-    employeesEmployeeIdJobsPut:
+    replaceJobs:
       path: /{employeeId}/jobs
       method: PUT
       docs: |
@@ -246,7 +246,7 @@ service:
           type: string
         name: a-jobs-list-request
       response: Employee
-    employeesEmployeeIdWageOverridesPut:
+    replaceWageOverrides:
       path: /{employeeId}/wageOverrides
       method: PUT
       docs: |

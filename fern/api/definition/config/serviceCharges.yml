@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /serviceCharges
   endpoints:
-    serviceChargesGuidGet:
+    getServiceCharge:
       path: /{guid}
       method: GET
       docs: |
@@ -30,7 +30,7 @@ service:
           service-charge-type
           -request
       response: ServiceCharge
-    serviceChargesGet:
+    getAllServiceCharges:
       path: ""
       method: GET
       docs: |

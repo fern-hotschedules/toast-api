@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: ""
   endpoints:
-    pricesPost:
+    getAllPrices:
       path: /prices
       method: POST
       docs: |
@@ -37,7 +37,7 @@ service:
           type: string
         name: get-order-prices-request
       response: OrderResponse
-    ordersGuidGet:
+    getOrder:
       path: /orders/{guid}
       method: GET
       docs: Retrieves detailed information about a single order, specified by its
@@ -54,7 +54,7 @@ service:
             type: string
         name: get-an-order-request
       response: commons.Order
-    ordersBulkGet:
+    getAllBulkOrders:
       path: /ordersBulk
       method: GET
       docs: |
@@ -122,7 +122,7 @@ service:
             type: string
         name: get-multiple-orders-request
       response: list<commons.Order>
-    ordersOrderGuidChecksCheckGuidSelectionsPost:
+    addItemToCheck:
       path: /orders/{orderGuid}/checks/{checkGuid}/selections
       method: POST
       docs: >
@@ -152,7 +152,7 @@ service:
         body:
           type: list<commons.Selection>
         name: add-items-to-a-check-request
-    ordersOrderGuidDeliveryInfoPatch:
+    updateDelivery:
       path: /orders/{orderGuid}/deliveryInfo
       method: PATCH
       docs: >
@@ -179,7 +179,7 @@ service:
         body:
           type: list<commons.DeliveryInfo>
         name: update-delivery-information-request
-    ordersGet:
+    getAllOrders:
       path: /orders
       method: GET
       docs: |
@@ -224,7 +224,7 @@ service:
             type: string
         name: get-order-identifiers-(deprecated)-request
       response: list<string>
-    ordersPost:
+    createOrder:
       path: /orders
       method: POST
       docs: Submits an order to the server. Returns a JSON `Order` object if

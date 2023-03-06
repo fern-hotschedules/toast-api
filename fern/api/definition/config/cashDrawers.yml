@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /cashDrawers
   endpoints:
-    cashDrawersGuidGet:
+    getCashDrawer:
       path: /{guid}
       method: GET
       docs: |
@@ -28,7 +28,7 @@ service:
           cash-drawer
           -request
       response: CashDrawer
-    cashDrawersGet:
+    getAllCashDrawers:
       path: ""
       method: GET
       docs: |

@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /revenueCenters
   endpoints:
-    revenueCentersGuidGet:
+    getRevenueCenter:
       path: /{guid}
       method: GET
       docs: |
@@ -28,7 +28,7 @@ service:
           revenue-center
           -request
       response: RevenueCenter
-    revenueCentersGet:
+    getAllRevenueCenters:
       path: ""
       method: GET
       docs: |

@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /breakTypes
   endpoints:
-    breakTypesGuidGet:
+    getBreakType:
       path: /{guid}
       method: GET
       docs: |
@@ -27,7 +27,7 @@ service:
           break-type
           -request
       response: BreakType
-    breakTypesGet:
+    getAllBreakTypes:
       path: ""
       method: GET
       docs: |

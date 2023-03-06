@@ -4,7 +4,7 @@ service:
   auth: false
   base-path: /discounts
   endpoints:
-    discountsGuidGet:
+    getDiscount:
       path: /{guid}
       method: GET
       docs: |
@@ -28,7 +28,7 @@ service:
           discount
           -request
       response: Discount
-    discountsGet:
+    getAllDiscounts:
       path: ""
       method: GET
       docs: |
