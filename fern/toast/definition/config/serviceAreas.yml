@@ -1,7 +1,7 @@
 imports:
   commons: commons.yml
 service:
-  auth: false
+  auth: true
   base-path: /serviceAreas
   endpoints:
     get:
