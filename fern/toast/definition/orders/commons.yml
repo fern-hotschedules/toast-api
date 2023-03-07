@@ -2,7 +2,7 @@
 
 types:
   Payment:
-    docs: Defines a payment.
+    docs: Defines a payment from a customer.
     extends:
       - ExternalReference
     properties:
