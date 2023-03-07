@@ -10,7 +10,7 @@ groups:
         github:
           repository: fern-hotschedules/toast-node
       - name: fernapi/fern-postman
-        version: 0.0.39
+        version: 0.0.42-1-ge500ae2
         output:
           location: postman
           api-key: ${FERN_POSTMAN_API_KEY}
